@@ -10,7 +10,7 @@ st.markdown("Welcome to QuickTube, the fastest way to summarize videos on YouTub
 video_url = st.text_input("_:red[Enter a YouTube URL:]_")
 
 # Replace with your own OpenAI API key
-openai.api_key = API_KEY
+openai.api_key = st.secrets["API_KEY"]
 
 def summarize():
     video_id = video_url.split("?v=")[-1]
