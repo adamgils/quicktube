@@ -8,7 +8,7 @@ import openai
 """
 st.markdown("Welcome to QuickTube, the fastest way to summarize videos on YouTube!")
 video_url = st.text_input("_:red[Enter a YouTube URL:]_")
-st.markdown("_Created by Adam Gilani - [@adamgilani](https://twitter.com/adamgilani_")
+st.markdown("_Created by Adam Gilani - [@adamgilani](https://twitter.com/adamgilani)_")
 
 # Replace with your own OpenAI API key
 openai.api_key = st.secrets["API_KEY"]
