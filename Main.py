@@ -56,8 +56,17 @@ def summarize():
 
     # Concatenate the summaries into a single string
     summary = "".join(summaries)
-    st.write(summary)
+    return summary
 
 if video_url:
-    st.spinner("Please wait while your Tweet is being generated...")
-    summarize()
+    # Display the spinner
+    spinner = st.spinner("Please wait while your text is being generated...")
+
+    # Generate the summarization text
+    summary = summarize()
+
+    # Stop the spinner
+    spinner.stop()
+
+    # Write the summarization text to the app
+    st.write(summary)
