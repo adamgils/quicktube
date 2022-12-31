@@ -79,3 +79,5 @@ class Openai:
         except Exception as e:
             logging.error(f"OpenAI API error: {e}")
             st.session_state.image_error = f"OpenAI API error: {e}"
+
+ ## Credit to Nikolas Schriefer
