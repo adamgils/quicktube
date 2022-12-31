@@ -12,8 +12,16 @@ video_url = st.text_input("_:red[Enter a YouTube URL:]_")
 # Replace with your own OpenAI API key
 openai.api_key = st.secrets["API_KEY"]
 
+def extract_video_ID():
+    if 'watch' in video_url:
+        return video_url.split("?v=")[-1]
+    elif 'youtu.be' in video_url:
+        return video_url.split("/")[-1]
+    else:
+        raise ValueError("Invalid URL")
+
 def summarize():
-    video_id = video_url.split("?v=")[-1]
+    video_id = extract_video_ID()
 
     # Retrieve the transcript of the video
     transcript = YouTubeTranscriptApi.get_transcript(video_id)
