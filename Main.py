@@ -59,4 +59,5 @@ def summarize():
     st.write(summary)
 
 if video_url:
+    st.spinner("Please wait while your Tweet is being generated...")
     summarize()
