@@ -4,10 +4,11 @@ from youtube_transcript_api import YouTubeTranscriptApi
 import openai
 
 """
-# QuickTube: _Video Summarizer_
+# QuickTube: _YouTube Video Summarizer_
 """
 st.markdown("Welcome to QuickTube, the fastest way to summarize videos on YouTube!")
 video_url = st.text_input("_:red[Enter a YouTube URL:]_")
+st.markdown("_Made by Adam Gilani_")
 
 # Replace with your own OpenAI API key
 openai.api_key = st.secrets["API_KEY"]
