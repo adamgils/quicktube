@@ -60,13 +60,9 @@ def summarize():
 
 if video_url:
     # Display the spinner
-    spinner = st.spinner("Please wait while your text is being generated...")
-
-    # Generate the summarization text
-    summary = summarize()
-
-    # Stop the spinner
-    spinner.stop()
+    with st.spinner("Please wait while your text is being generated..."):
+        # Generate the summarization text
+        summary = summarize()
 
     # Write the summarization text to the app
     st.write(summary)
