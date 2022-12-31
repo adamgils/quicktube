@@ -1,4 +1,4 @@
-# QuickTube - YouTube Video Summarizer with OpenAI GPT-3
+# QuickTube - YouTube Video Summarizer
 Live version of this app at quicktube.streamlit.app
 
 ## Description
