@@ -3,6 +3,8 @@ import math
 from youtube_transcript_api import YouTubeTranscriptApi
 import openai
 
+# UI Text
+
 """
 # QuickTube: _YouTube Video Summarizer_
 """
@@ -10,7 +12,7 @@ st.markdown("Welcome to QuickTube, the fastest way to summarize videos on YouTub
 video_url = st.text_input("_:red[Enter a YouTube URL:]_")
 st.markdown("_Created by [Adam Gilani](https://twitter.com/adamgilani)_")
 
-# Replace with your own OpenAI API key
+# Feeds API Key From StreamLit
 openai.api_key = st.secrets["API_KEY"]
 
 def extract_video_ID():
