@@ -30,8 +30,8 @@ def summarize():
     # Concatenate the transcript into a single string
     transcript_text = " ".join([line["text"] for line in transcript])
 
-    # Divide the transcript into chunks of 1500 characters
-    chunk_size = 1500
+    # Divide the transcript into chunks of 3500 characters
+    chunk_size = 3500
     num_chunks = math.ceil(len(transcript_text) / chunk_size)
     chunks = [transcript_text[i * chunk_size:(i + 1) * chunk_size] for i in range(num_chunks)]
 
@@ -48,7 +48,7 @@ def summarize():
             engine="text-davinci-003",
             prompt=prompt,
             temperature=1,
-            max_tokens=int(1800 - estimated_tokens)
+            max_tokens=int(3800 - estimated_tokens)
         )
 
         # Add the summary to the list
