@@ -1,8 +1,8 @@
 # QuickTube - YouTube Video Summarizer
-Live version of this app at quicktube.streamlit.app
+Live version of this app at [quicktube.streamlit.app](https://quicktube.streamlit.app/)
 
 ## Description
-This Streamlit mini-app generates a summary of YouTube videos using OpenAI's GPT-3 based Davinci model for texts.
+This Streamlit mini-app generates a summary of YouTube videos using OpenAI's GPT-3 based [Davinci model](https://beta.openai.com/docs/models/overview) for texts.
 
 The app accepts the URL of a YouTube video as input and uses the GPT-3 Davinci model to generate a summary of the video's content. Users can also specify the length of the summary they want to receive.
 
