@@ -48,7 +48,7 @@ def summarize():
 
         # Send the prompt to the GPT-3 API
         response = openai.Completion.create(
-            engine="text-curie-001",
+            engine="text-davinci-003",
             prompt=prompt,
             temperature=1,
             max_tokens=int(3800 - estimated_tokens)
