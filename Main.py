@@ -33,37 +33,27 @@ def summarize():
     # Concatenate the transcript into a single string
     transcript_text = " ".join([line["text"] for line in transcript])
 
-    # Divide the transcript into chunks of 3500 characters
-    chunk_size = 3500
-    num_chunks = math.ceil(len(transcript_text) / chunk_size)
-    chunks = [transcript_text[i * chunk_size:(i + 1) * chunk_size] for i in range(num_chunks)]
-
-    # Initialize an empty list to store the summaries
-    summaries = []
+    # Calculate estimated amount of tokens needed for entire prompt
+    estimated_tokens = len(transcript_text) / 5.1
 
     # Send each chunk to the OpenAI GPT-3 API to generate a summary
-    for chunk in chunks:
-        prompt = f"Summarize into a concise but detailed paragraph, leave out anything that is not relevant: {chunk}"
-        estimated_tokens = len(prompt) / 4
+    prompt = f"Summarize this into a detailed paragraph: {transcript_text}"
 
+    if estimated_tokens <= 3500:
         # Send the prompt to the GPT-3 API
         response = openai.Completion.create(
             engine="text-davinci-003",
             prompt=prompt,
             temperature=1,
-            max_tokens=int(3800 - estimated_tokens)
+            max_tokens=500
         )
-
-        # Add each summary to the list
-        summaries.append(response["choices"][0]["text"])
-
-    # Concatenate the summaries into a single string
-    summary = "".join(summaries)
-    return summary
+        return response["choices"][0]["text"]
+    else:
+        return "Video too long... try another video!"
 
 if video_url:
     # Text generation spinner
-    with st.spinner("Please wait while your text is being generated..."):
+    with st.spinner("Please wait while your summary is being generated..."):
         # Generate the summarization text
         summary = summarize()
 
